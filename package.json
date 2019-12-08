@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.2.0",
+    "@vuepress/theme-default": "^1.2.0",
+    "vuepress": "^1.2.0"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "docs:debug": "vuepress dev docs --debug"
+  }
+}

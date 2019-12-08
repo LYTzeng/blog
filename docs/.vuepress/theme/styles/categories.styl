@@ -1,0 +1,65 @@
+.tilesWrap {
+  padding: 0;
+  margin: 50px auto;
+  list-style: none;
+  text-align: center;
+}
+.category-card-container
+  padding-top 25px
+.tilesWrap .category-card {
+  display: inline-block;
+  width: 80%;
+  min-width: 200px;
+  max-width: 900px;
+  padding: 80px 20px 40px;
+  position: relative;
+  vertical-align: top;
+  margin: 10px;
+  min-height: 25vh;
+  background: #3d3d3d;
+  box-shadow: 2px 2px 16px hsl(0, 0%, 18%);
+  text-align: left;
+}
+.tilesWrap .category-card a {
+  text-decoration: none !important;
+}
+.tilesWrap .category-card > a .cat-page-title:hover {
+  color: $accentColor;
+}
+.tilesWrap .category-card .category-name {
+  font-size: 40px;
+  font-family: 'Noto Sans TC Medium';
+  margin: 0;
+  position: absolute;
+  opacity: 0.3;
+  top: 25px;
+  right: 10px;
+  transition: all 0.2s cubic-bezier(0.25,0.1,0.25,1);
+}
+.tilesWrap .category-card .cat-page-title {
+  font-size: 20px;
+  font-family: 'Noto Sans TC Regular';
+  color: $textColor;
+  margin-bottom: 5px;
+}
+.tilesWrap .category-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: $textColor;
+  margin-top: 5px;
+  margin-bottom: 40px;
+}
+.tilesWrap .category-card:hover .category-name {
+  font-size: 100px;
+  opacity: 0.1;
+}
+
+.tilesWrap .category-card:after {
+  content: "";
+  position: absolute;
+  width: 2%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.02);
+}
