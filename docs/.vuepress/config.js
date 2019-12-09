@@ -20,11 +20,11 @@ module.exports = {
         ],
         lastUpdated: 'Last Updated',
         smoothScroll: true,
-        logo: '/logo.svg'
-        // repo: 'https://github.com/xxxx.git',
-        // repoLabel: 'GitHub',
-        // docsRepo: 'https://github.com/Mulander-J/Wiki1001Dev',
-        // docsDir: '/',
+        logo: '/logo.svg',
+        repo: 'https://github.com/LYTzeng/lytzeng.github.io.git',
+        repoLabel: 'GitHub',
+        docsRepo: 'https://github.com/LYTzeng/lytzeng.github.io.git',
+        docsDir: '/',
 
     },
     base: '/',
@@ -35,6 +35,7 @@ module.exports = {
         ['@vuepress/search', {
             searchMaxSuggestions: 10
         }],
+        ['@vuepress/plugin-last-updated'],
         // ['@vuepress/google-analytics', {
         //     ga: '*********'//你的Google Analytics ID
         // }],

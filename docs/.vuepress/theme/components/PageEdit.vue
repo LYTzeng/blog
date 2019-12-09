@@ -1,7 +1,6 @@
 <template>
   <div class="page-edit">
     <div class="last-updated" v-if="lastUpdated">
-      <!-- <span class="prefix">{{ lastUpdatedText }}:</span> -->
       <span class="prefix"><svg fill="#ececec" focusable="false" preserveAspectRatio="xMidYMid meet" style="display: inline-block; vertical-align: middle; will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26 4.03h-4v-2h-2v2h-8v-2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-20a2 2 0 0 0-2-2zm0 22H6v-14h20zm0-16H6v-4h4v2h2v-2h8v2h2v-2h4z"></path><title>Calendar</title></svg></span>
       <span class="time">{{ lastUpdated }}</span>
     </div>
@@ -16,16 +15,6 @@ export default {
   computed: {
     lastUpdated () {
       return this.$page.lastUpdated
-    },
-
-    lastUpdatedText () {
-      if (typeof this.$themeLocaleConfig.lastUpdated === 'string') {
-        return this.$themeLocaleConfig.lastUpdated
-      }
-      if (typeof this.$site.themeConfig.lastUpdated === 'string') {
-        return this.$site.themeConfig.lastUpdated
-      }
-      return 'Last Updated'
     },
   },
 
