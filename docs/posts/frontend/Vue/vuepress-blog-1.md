@@ -238,3 +238,5 @@ git commit -m 'deploy'
     ![](https://i.imgur.com/a1YIRND.png)
 
 之後會發更多 VuePress 客製化過程，包含這個部落格使用的、自行開發的 Tags 功能、分類功能等，因為VuePress 原本都沒有這些功能。
+
+<Disqus/>

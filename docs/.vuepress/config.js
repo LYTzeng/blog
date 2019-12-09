@@ -1,3 +1,5 @@
+let ogprefix = 'og: http://ogp.me/ns#';
+
 module.exports = {
     extend: '@vuepress/theme',
     resolve: {
@@ -25,7 +27,18 @@ module.exports = {
     },
     base: '/',
     head: [
-        ['link', { rel: 'icon', href: '/logo.png' }]
+        ['link', { rel: 'icon', href: '/logo.png' }],
+        ['meta', { name: 'theme-color', content: '#333333' }],
+        ['meta', { prefix: ogprefix, property: 'og:title', content: 'Oscar\'s Pathways' }],
+        ['meta', { prefix: ogprefix, property: 'og:type', content: 'article' }],
+        ['meta', { prefix: ogprefix, property: 'og:url', content: 'https://lytzeng.github.io' }],
+        ['meta', { prefix: ogprefix, property: 'og:image', content: '/logo.png' }],
+        ['meta', { prefix: ogprefix, property: 'og:article:author', content: 'Li-Yen Tseng' }],
+        ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+        ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+        ['link', { rel: 'apple-touch-icon', href: `/logo.png` }],
+        ['link', { rel: 'mask-icon', href: '/logo.svg', color: '#333333' }],
+        ['meta', { name: 'msapplication-TileColor', content: '#333333' }],
     ],
     plugins: [
         ['@vuepress/search', {

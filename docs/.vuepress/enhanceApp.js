@@ -2,6 +2,7 @@ import TagLinks from './theme/components/TagLinks.vue'
 import PageEdit from './theme/components/PageEdit.vue'
 import GetPagesByTag from './theme/components/GetPagesByTag.vue'
 import Categories from './theme/components/Categories.vue'
+import Disqus from './theme/components/Disqus.vue'
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -13,4 +14,5 @@ export default ({
   Vue.component('PageEdit', PageEdit)
   Vue.component('GetPagesByTag', GetPagesByTag)
   Vue.component('Categories', Categories)
+  Vue.component('Disqus', Disqus)
 }
