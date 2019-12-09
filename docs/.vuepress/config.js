@@ -21,10 +21,6 @@ module.exports = {
         lastUpdated: 'Last Updated',
         smoothScroll: true,
         logo: '/logo.svg',
-        repo: 'https://github.com/LYTzeng/lytzeng.github.io.git',
-        repoLabel: 'GitHub',
-        docsRepo: 'https://github.com/LYTzeng/lytzeng.github.io.git',
-        docsDir: '/',
 
     },
     base: '/',

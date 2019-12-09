@@ -158,7 +158,7 @@ module.exports = {
 ```
 附帶一提，Vuepress 會對連外的連結加上 `target="_blank" rel="noopener noreferrer"`，就是開啟新分頁，而`rel="noopener noreferrer"`和資安考量有關，詳細請見[這裡](https://pointjupiter.com/what-noopener-noreferrer-nofollow-explained/)。
 
-### 側邊攔
+### 側邊欄
 
 **`.vuepress/config.js`**
 ```js
