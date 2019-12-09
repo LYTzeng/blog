@@ -17,8 +17,6 @@ export default {
   name: "TagLinks",
   computed: {
     category () {
-    
-      console.log(this.$page)
       return this.$page.frontmatter.category
     },
   }
