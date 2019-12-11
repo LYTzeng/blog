@@ -5,7 +5,7 @@ sidebar: auto
 tags: ["VuePress"]
 category: Frontend
 ---
-# VuePress 部落格架設與折騰 (二)
+# VuePress 部落格架設與折騰 (二)：Components
 <PageEdit/>
 <div><TagLinks/></div>
 
@@ -71,6 +71,8 @@ $page-max-width = 900px
 接著是使用元件的兩種方法。
 
 ## 使用元件
+
+以下兩種方法需要視需求決定使用其中一種，第一種方法適用於大量頁面都需要使用同一個元件，第二種適合用於多個小元件組合成單一大元件的情況。
 
 ### 直接將元件嵌入到 Markdown
 
