@@ -48,5 +48,6 @@ module.exports = {
         // ['@vuepress/google-analytics', {
         //     ga: '*********'//你的Google Analytics ID
         // }],
-    ]
+    ],
+
 }
