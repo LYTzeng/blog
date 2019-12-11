@@ -42,7 +42,4 @@ li > a
   color $textColor
 .tag-posts > ul > li
   padding 20px 0
-  a > h1
-    line-height .5
-
 </style>

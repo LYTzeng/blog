@@ -1,17 +1,17 @@
 ---
 lang: zh-TW
-description: 這個部落格決定使用 VuePress 架設，過程中遇到種種問題以及官方文件寫不清楚的地方，因此這一系列 VuePress 筆記同時也作為造福人群的文章吧。會想使用 VuePress，一方面是因為想用 Vue 來寫，另一方面則是需要高度的 Customization。使用其他框架雖然很多功能都已經實現，但是前端很多東西如顏色、Navbar、Sidebar等需要更細的調整，我個人也不想看到整個 Theme 和其他網站「撞衫」，所以比較偏好大部分自己來。
+description: 這個部落格決定使用 VuePress 架設，過程中遇到種種問題以及官方文件寫不清楚的地方，因此這一系列 VuePress 筆記同時也希望幫助到剛接觸的人。會想使用 VuePress，一方面是因為想用 Vue 來寫，另一方面則是需要高度的 Customization。使用其他框架雖然很多功能都已經實現，但是前端很多東西如顏色、Navbar、Sidebar等需要更細的調整，我個人也不想看到整個 Theme 和其他網站「撞衫」，所以比較偏好大部分自己來。
 sidebar: auto
 tags: ["VuePress"]
 category: Frontend
 ---
-# VuePress 部落格架設與折騰 (一)
+# VuePress 部落格架設與折騰 (一)：Themes、頁面元素、部署至 Github
 <PageEdit/>
 <div><TagLinks/></div>
 
 ![](https://vuepress.vuejs.org/hero.png)
 
-這個部落格決定使用 VuePress 架設，過程中遇到種種問題以及官方文件寫不清楚的地方，因此這一系列 VuePress 筆記同時也作為造福人群的文章吧。會想使用 VuePress，一方面是因為想用 Vue 來寫，另一方面則是需要高度的 Customization。使用其他框架雖然很多功能都已經實現，但是前端很多東西如顏色、Navbar、Sidebar等需要更細的調整，我個人也不想看到整個 Theme 和其他網站「撞衫」，所以比較偏好大部分自己來。
+這個部落格決定使用 VuePress 架設，過程中遇到種種問題以及官方文件寫不清楚的地方，因此這一系列 VuePress 筆記同時也希望幫助到剛接觸的人。會想使用 VuePress，一方面是因為想用 Vue 來寫，另一方面則是需要高度的 Customization。使用其他框架雖然很多功能都已經實現，但是前端很多東西如顏色、Navbar、Sidebar等需要更細的調整，我個人也不想看到整個 Theme 和其他網站「撞衫」，所以比較偏好大部分自己來。
 
 ## 安裝 Yarn 和 VuePress
 
