@@ -117,3 +117,4 @@ mkfs.vfat -F 32 /dev/sda1
 
 折騰半天，終於成功在 LAB 擁有自己的 Server 了 ~~不用花自己的電費和硬體$$~~
 
+<Disqus/>
