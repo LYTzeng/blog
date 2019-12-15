@@ -167,6 +167,4 @@ footer
     margin 0 auto
     text-align center
     line-height 3em
-
-
 </style>

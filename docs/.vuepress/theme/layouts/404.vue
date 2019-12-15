@@ -5,6 +5,7 @@
       <blockquote>{{ getMsg() }}</blockquote>
       <router-link to="/">Take me home.</router-link>
     </div>
+    <div class="pixiv">pixiv id: <a href="https://www.pixiv.net/artworks/60914916">60914916</a></div>
   </div>
 </template>
 
@@ -24,3 +25,23 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.theme-container
+  height 100vh
+  width 100vw
+  background-image linear-gradient(to bottom, #444, #fff),url("/404.jpg")
+  background-repeat no-repeat
+  background-position center
+  background-size: cover
+  background-blend-mode: multiply;
+.pixiv
+  display block
+  position absolute 
+  left 100vw
+  top 100vh
+  width 500px
+  height 50px
+  transform translate(-510px, -50px)
+  text-align right
+</style>
