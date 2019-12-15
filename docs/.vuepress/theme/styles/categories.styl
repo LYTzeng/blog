@@ -54,12 +54,13 @@
   opacity: 0.1;
 }
 
-.tilesWrap .category-card:after {
+.tilesWrap .category-card::after {
   content: "";
   position: absolute;
-  width: 2%;
+  width: 5px;
   height: 100%;
   left: 0;
   top: 0;
-  background: rgba(255, 255, 255, 0.02);
+  background: $accentColor;
+  transform: translate(-2px, 0px) skew(0deg, 45deg);
 }

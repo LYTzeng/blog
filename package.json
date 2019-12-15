@@ -2,7 +2,9 @@
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/theme-default": "^1.2.0",
-    "vuepress": "^1.2.0"
+    "jquery": "^3.4.1",
+    "vuepress": "^1.2.0",
+    "wordcloud": "^1.1.1"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",

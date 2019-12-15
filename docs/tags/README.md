@@ -5,18 +5,7 @@ sidebar: auto
 
 <div>
 <template>
-  <div class="tags">
-    <router-link
-      v-for="tag in Object.keys(tags)"
-      :key="tag"
-      :to="{ path: `/tags/${tag}`}">
-      <Badge type="transparent">
-        <div :style="'font-size: ' + tags[tag].length*0.8 + 'em'">
-            {{tag}}<b class="tagcount"> {{tags[tag].length}}</b>
-        </div>
-      </Badge>
-    </router-link>
-  </div>
+    <TagCloud/>
 </template>
 
 <script>
@@ -47,7 +36,5 @@ export default {
   & > a:hover
     border-bottom: 2px solid #24d1f0;
     margin-bottom: -3px;
-
-
 </style>
 </div>

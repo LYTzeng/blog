@@ -34,16 +34,18 @@ export default {
             level: 2,
             slug: cat,
             title: cat
-          })
-        } 
+          });
+        }
       }
-      console.log(this.$page)
       return categories;
     }
+  },
+  mounted: function() {
+    $(".category-card").addClass("cardAfter");
   }
 };
 </script>
 
 <style lang="stylus">
-@require '../styles/categories.styl'
+@require '../styles/categories.styl';
 </style>

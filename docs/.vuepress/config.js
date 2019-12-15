@@ -13,12 +13,6 @@ module.exports = {
             { text: 'Categories', link: '/categories/' },
             { text: 'Tags', link: '/tags/' },
             { text: 'About', link: '/about/' },
-            // {
-            //     text: 'Frontend', items: [
-            //         { text: 'Vue', link: '/posts/frontend/Vue/' },
-            //         { text: '#', link: '#' },
-            //     ],
-            // },
         ],
         lastUpdated: 'Last Updated',
         smoothScroll: true,
