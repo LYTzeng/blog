@@ -33,6 +33,7 @@ module.exports = {
         ['link', { rel: 'apple-touch-icon', href: `/logo.png` }],
         ['link', { rel: 'mask-icon', href: '/logo.svg', color: '#333333' }],
         ['meta', { name: 'msapplication-TileColor', content: '#333333' }],
+        ['meta', { name: 'google-site-verification', content: 'luVocIl3165-z3eRtc2ux4f0_QqyqMiauRI-fD0GoJ0' }],
     ],
     plugins: [
         ['@vuepress/search', {
