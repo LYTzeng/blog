@@ -44,7 +44,7 @@ export default {
             return colorArr[Math.floor(Math.random() * pandaSyntaxArr.length)];
         },
         click: function(item) {
-          window.location = "/tags/" + item[0] + ".html"
+          window.location = "/tags/" + item[0].toLowerCase() + ".html"
         }
       });
     });
