@@ -1,6 +1,6 @@
 <template>
   <div class="tag-posts">
-    <ul>
+    <ul style="list-style-type: none">
       <li v-for="page in thisTag">
         <router-link :to="{ path: page.path}">
           <h1>{{page.title}}</h1>
@@ -33,10 +33,8 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-ul
-  list-style-type: none
-li > a
+<style lang="stylus" scoped>
+.tag-posts > ul li  a
   text-decoration none !important
   text-decoration-color none
   color $textColor
