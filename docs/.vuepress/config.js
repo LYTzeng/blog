@@ -39,9 +39,9 @@ module.exports = {
             searchMaxSuggestions: 10
         }],
         ['@vuepress/plugin-last-updated'],
-        // ['@vuepress/google-analytics', {
-        //     ga: '*********'//你的Google Analytics ID
-        // }],
+        ['@vuepress/google-analytics', {
+            ga: 'UA-154635266-1'//Google Analytics ID
+        }],
     ],
 
 }
