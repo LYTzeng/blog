@@ -18,11 +18,9 @@ export default {
   name: 'PageEdit',
   computed: {
     lastUpdated () {
-      console.log('last updated: ' + this.$page.lastUpdated)
       return this.$page.lastUpdated
     },
     firstCreated () {
-      console.log('first created: ' + this.$page.firstCreated)
       return this.$page.firstCreated
     },
     showLastUpdated () {
