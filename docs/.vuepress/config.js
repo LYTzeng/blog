@@ -43,6 +43,7 @@ module.exports = {
         ['@vuepress/google-analytics', {
             ga: 'UA-154635266-1'//Google Analytics ID
         }],
+        ['vuepress-plugin-first-created'],
     ],
 
 }
