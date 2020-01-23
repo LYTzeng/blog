@@ -175,13 +175,19 @@ table
   overflow-x: auto
 
 tr
-  border-top 1px solid #dfe2e5
+  border-top 1px solid $bgColor
+
+  &:nth-child(1n)
+    background-color #424242
 
   &:nth-child(2n)
-    background-color #f6f8fa
+    background-color #3c3c3c
+
+th
+    background-color #525252
 
 th, td
-  border 1px solid #dfe2e5
+  border 1px solid $bgColor
   padding .6em 1em
 
 .theme-container
@@ -199,6 +205,12 @@ th, td
 
 code
   background-color: $codeBgColor
+
+// Centering images in articles.
+.page > .theme-default-content > p > img
+  margin-left: auto
+  margin-right: auto
+  display: block
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar

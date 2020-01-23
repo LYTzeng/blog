@@ -4,6 +4,7 @@
     "@vuepress/theme-default": "^1.2.0",
     "jquery": "^3.4.1",
     "vuepress": "^1.2.0",
+    "vuepress-plugin-first-created": "/mnt/d/selfmade-vuepress-plugin/vuepress-plugin-first-created",
     "wordcloud": "^1.1.1"
   },
   "scripts": {
