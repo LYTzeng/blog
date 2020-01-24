@@ -1,4 +1,17 @@
 let ogprefix = 'og: http://ogp.me/ns#';
+const feed_options = {
+    image: 'http://lytzeng.github.io/logo.png',
+    favicon: 'http://lytzeng.github.io/logo.svg',
+    canonical_base: 'http://lytzeng.github.io',
+    posts_directories: [
+        '/posts/',
+    ],
+    count: 100,
+};
+const robots_options = {
+    host: 'http://lytzeng.github.io',
+    sitemap: '/sitemap.xml',
+}
 
 module.exports = {
     extend: '@vuepress/theme',
@@ -44,6 +57,11 @@ module.exports = {
             ga: 'UA-154635266-1'//Google Analytics ID
         }],
         ['vuepress-plugin-first-created'],
+        ['feed', feed_options],
+        ['robots', robots_options],
+        ['canonical', {
+            baseURL: 'http://lytzeng.github.io',
+        }],
     ],
 
 }
