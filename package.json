@@ -3,6 +3,7 @@
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/theme-default": "^1.2.0",
     "jquery": "^3.4.1",
+    "jquery-visible": "^1.2.0",
     "vuepress": "^1.2.0",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-feed": "^0.1.8",

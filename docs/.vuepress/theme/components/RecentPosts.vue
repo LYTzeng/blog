@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="post in recentPosts()">
+      <li v-for="post in recentPosts(start, end)" class="single-post">
         <a :href="post.path">{{post.title}}</a>
         <p style="margin-top: 0; color: #bdbdbd;">
           <svg fill="#ececec" focusable="false" preserveAspectRatio="xMidYMid meet" style="display: inline-block; vertical-align: middle; will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26 4.03h-4v-2h-2v2h-8v-2h-2v2H6a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-20a2 2 0 0 0-2-2zm0 22H6v-14h20zm0-16H6v-4h4v2h2v-2h8v2h2v-2h4z"></path><title>Calendar</title></svg>
@@ -12,7 +12,7 @@
           <span v-for="tag in post.frontmatter.tags">{{tag}}&nbsp;&nbsp;</span>
         </p>
         <p>{{post.frontmatter.description}}<a :href="post.path" style="display: inline; font-size:16px; padding-left: 0;"> ... Read more</a></p>
-      </li>
+      {{bottom}}</li>
     </ul>
   </div>
 </template>
@@ -22,13 +22,26 @@ import { recentPosts } from '../util/recentPosts'
 
 export default {
   data() {
-    return {};
+    return {
+      start: 0, // Start of the first post
+      end: 5, // The last visible post
+    }
   },
   computed: {
-
   },
   methods: {
-    recentPosts
+    recentPosts,
+    scroll () {
+      window.onscroll = () => {
+        let bottomOfWindow = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop) + window.innerHeight === document.documentElement.offsetHeight
+        if (bottomOfWindow) {
+          this.end += 5 // Increase the number of visible posts
+        }
+      }
+    }
+  },
+  mounted (){
+    this.scroll()
   }
 };
 </script>
@@ -40,4 +53,13 @@ ul
   text-decoration none
   color $textColor
   font-size: 2.2rem;
+
+.hidden-div
+  opacity 0
+  transition opacity 0.3s
+  display none
+
+.hidden-div.show 
+  opacity 1
+  display block
 </style>

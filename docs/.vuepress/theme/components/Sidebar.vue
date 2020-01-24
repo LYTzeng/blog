@@ -42,7 +42,7 @@
         <span>近期文章</span>
       </p>
       <ul>
-        <li v-for="post in recentPosts()">
+        <li v-for="post in recentPosts(0, 5)">
           <a :href="post.path" class="sidebar-link recentTitle">{{post.title}}</a>
         </li>
       </ul>
@@ -71,7 +71,7 @@ export default {
   props: ["items"],
 
   methods: {
-    recentPosts
+    recentPosts,    
   },
 
   computed: {
@@ -96,7 +96,7 @@ export default {
       }
       return tagsCount;
     }
-  }
+  },
 };
 </script>
 

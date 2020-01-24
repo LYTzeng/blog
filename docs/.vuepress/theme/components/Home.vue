@@ -33,7 +33,6 @@
 import NavLink from "@theme/components/NavLink.vue";
 import RecentPosts from "@theme/components/RecentPosts.vue";
 
-
 export default {
   components: { NavLink, RecentPosts },
 
@@ -41,16 +40,16 @@ export default {
     data() {
       return this.$page.frontmatter;
     },
-
     actionLink() {
       return {
         link: this.data.actionLink,
         text: this.data.actionText
       };
     },
-
-  }
+  },
 };
+
+
 </script>
 
 <style lang="stylus">
@@ -89,5 +88,4 @@ export default {
           font-size 24px
         a, p
           padding 0 20px
-
 </style>

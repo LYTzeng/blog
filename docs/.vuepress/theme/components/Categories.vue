@@ -41,7 +41,10 @@ export default {
     }
   },
   mounted: function() {
-    $(".category-card").addClass("cardAfter");
+    $(".category-card").addClass("cardAfter")
+  },
+  beforeCreate: function() {
+    this.categories()
   }
 };
 </script>

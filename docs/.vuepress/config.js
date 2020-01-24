@@ -34,6 +34,7 @@ module.exports = {
     },
     base: '/',
     head: [
+        // SEO thing
         ['link', { rel: 'icon', href: '/logo.png' }],
         ['meta', { name: 'theme-color', content: '#333333' }],
         ['meta', { prefix: ogprefix, property: 'og:title', content: 'Oscar\'s Pathways' }],

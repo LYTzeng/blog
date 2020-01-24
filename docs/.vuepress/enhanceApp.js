@@ -15,6 +15,8 @@ export default ({
   if (!isServer) {
     // Register jQuery
     window.$ = window.jQuery = require('jquery')
+    // Register jQuery plugins
+    require('jquery-visible')
     // Register WordCloud
     window.WordCloud = require('wordcloud') 
   }

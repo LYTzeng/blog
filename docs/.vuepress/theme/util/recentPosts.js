@@ -1,4 +1,4 @@
-export function recentPosts() {
+export function recentPosts(start, end) {
     let posts = this.$site.pages
         .filter(p => {
             return p.path.indexOf("/posts/") >= 0;
@@ -8,6 +8,6 @@ export function recentPosts() {
             let bDate = new Date(b.firstCreated).getTime();
             return bDate - aDate;
         })
-        .slice(0, 20);
+        .slice(start, end);
     return posts;
 }
