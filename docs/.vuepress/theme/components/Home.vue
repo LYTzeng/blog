@@ -75,17 +75,17 @@ export default {
 
 @media (max-width: $MQMobileNarrow)
   .home
-    padding-left: 1.5rem
-    padding-right: 1.5rem
+    padding-left: .5rem
+    padding-right: .5rem
     ul
       padding-left 0
       li
-        margin 10px
-        padding 10px
+        margin 5px
+        padding 5px
         background-color hsl(0, 0%, 24%)
         box-shadow 3px 3px 12px hsl(0, 0%, 15%)
         a
           font-size 24px
         a, p
-          padding 0 20px
+          padding 0 15px
 </style>

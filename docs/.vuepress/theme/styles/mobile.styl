@@ -15,6 +15,8 @@ $MQNarrow = 1000px
 
 // wide mobile
 @media (max-width: $MQMobile)
+  body
+    font-size 14px
   .sidebar
     top 0
     padding-top $navbarHeight
@@ -36,7 +38,7 @@ $MQNarrow = 1000px
       .sidebar
         padding-top: 0
   .theme-default-content:not(.custom)
-    margin 0 2%
+    padding 0 20px
 
 // narrow mobile
 @media (max-width: $MQMobileNarrow)
@@ -44,5 +46,7 @@ $MQNarrow = 1000px
     font-size 1.9rem
   {$contentClass}
     div[class*="language-"]
-      margin 0.85rem -1.5rem
+      margin 0.85rem 0
       border-radius 0
+      pre[class*="language-"]
+        padding 1.25rem 1rem
