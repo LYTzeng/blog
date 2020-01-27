@@ -16,7 +16,7 @@ $MQNarrow = 1000px
 // wide mobile
 @media (max-width: $MQMobile)
   body
-    font-size 14px
+    font-size 1rem
   .sidebar
     top 0
     padding-top $navbarHeight
@@ -39,6 +39,10 @@ $MQNarrow = 1000px
         padding-top: 0
   .theme-default-content:not(.custom)
     padding 0 20px
+
+  h1, h2, h3, h4, h5, h6
+    {$contentClass}:not(.custom) > &
+      padding-top ($navbarHeight + 2rem)
 
 // narrow mobile
 @media (max-width: $MQMobileNarrow)
