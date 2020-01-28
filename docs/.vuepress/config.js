@@ -63,6 +63,7 @@ module.exports = {
         ['canonical', {
             baseURL: 'http://lytzeng.github.io',
         }],
+        ['img-lazy'],// Lazy loading
     ],
 
 }
