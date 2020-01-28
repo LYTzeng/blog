@@ -5,6 +5,7 @@
     "jquery": "^3.4.1",
     "jquery-visible": "^1.2.0",
     "vuepress": "^1.2.0",
+    "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-feed": "^0.1.8",
     "vuepress-plugin-first-created": "/mnt/d/selfmade-vuepress-plugin/vuepress-plugin-first-created",

@@ -1,8 +1,9 @@
-let ogprefix = 'og: http://ogp.me/ns#';
+const ogprefix = 'og: http://ogp.me/ns#'
+const canonical_base = 'http://lytzeng.github.io'
 const feed_options = {
     image: 'http://lytzeng.github.io/logo.png',
     favicon: 'http://lytzeng.github.io/logo.svg',
-    canonical_base: 'http://lytzeng.github.io',
+    canonical_base: canonical_base,
     posts_directories: [
         '/posts/',
     ],
@@ -11,6 +12,15 @@ const feed_options = {
 const robots_options = {
     host: 'http://lytzeng.github.io',
     sitemap: '/sitemap.xml',
+}
+const autometa_options = {
+    canonical_base: canonical_base,
+};
+
+module.exports = {
+    plugins: [
+        ['autometa', autometa_options]
+    ]
 }
 
 module.exports = {
@@ -64,6 +74,7 @@ module.exports = {
             baseURL: 'http://lytzeng.github.io',
         }],
         ['img-lazy'],// Lazy loading
+        ['autometa', autometa_options ],// Open Graph Proto.
     ],
 
 }
