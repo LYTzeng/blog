@@ -11,6 +11,7 @@
     "vuepress-plugin-first-created": "/mnt/d/selfmade-vuepress-plugin/vuepress-plugin-first-created",
     "vuepress-plugin-img-lazy": "^1.0.1",
     "vuepress-plugin-robots": "^1.0.1",
+    "vuepress-plugin-sitemap": "^2.3.1",
     "wordcloud": "^1.1.1"
   },
   "scripts": {

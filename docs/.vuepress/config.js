@@ -49,7 +49,7 @@ module.exports = {
         ['meta', { name: 'theme-color', content: '#333333' }],
         ['meta', { prefix: ogprefix, property: 'og:title', content: 'Oscar\'s Pathways' }],
         ['meta', { prefix: ogprefix, property: 'og:type', content: 'article' }],
-        ['meta', { prefix: ogprefix, property: 'og:url', content: 'https://lytzeng.github.io' }],
+        ['meta', { prefix: ogprefix, property: 'og:url', content: canonical_base }],
         ['meta', { prefix: ogprefix, property: 'og:image', content: '/logo.png' }],
         ['meta', { prefix: ogprefix, property: 'og:article:author', content: 'Li-Yen Tseng' }],
         ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
@@ -71,10 +71,13 @@ module.exports = {
         ['feed', feed_options],
         ['robots', robots_options],
         ['canonical', {
-            baseURL: 'http://lytzeng.github.io',
+            baseURL: canonical_base,
         }],
         ['img-lazy'],// Lazy loading
-        ['autometa', autometa_options ],// Open Graph Proto.
+        ['autometa', autometa_options],// Open Graph Proto.
+        ['sitemap', {
+            hostname: canonical_base
+        }],// Sitemap
     ],
 
 }
