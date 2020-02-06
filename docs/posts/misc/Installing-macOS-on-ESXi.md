@@ -2,7 +2,7 @@
 lang: zh-TW
 description: 蘋果真高價，何不自己架？ 如果覺得 Mac Pro 很貴，或是說需要更進一步客製化硬體，何不考慮自己在伺服器上架設一台 Mac 呢？要多少 Storage 和 Memory 就有多少。總之，能省錢又不犧牲效能，就是爽！網路上有一些關於 ESXi 安裝 macOS 的教學，但是大多是給 VMware Workstation，不然就是版本不夠新，這裡提供我親自嘗試過、可行的且最新的 ESXi 搭配 macOS 的安裝方式。
 sidebar: auto
-tags: ["VMware", "vSphere", "macOS"]
+tags: ["VMware", "vSphere", "MacOS"]
 category: Misc
 ---
 # 想擁有一台伺服器等級 Mac? macOS 10.15 Catalina on VMware ESXi 6.7
