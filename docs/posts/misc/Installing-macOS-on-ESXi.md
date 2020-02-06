@@ -142,6 +142,55 @@ echo 'smc.version = "0"' >> [虛擬機器名稱].vmx
 如果發現螢幕解析度沒有隨著調整視窗尺寸而改變，請試著提升虛擬顯示卡記憶體。
 ![](https://i.imgur.com/nRWrrGb.png)
 
+## 顯卡與 USB 裝置透通 (Passthrough)
+
+因為用遠端或是 Remote Console 操作體驗感覺不順暢，接著我想嘗試讓顯卡直接 Passthrough 給 Guest OS，也就是 macOS。
+
+首先在管理>硬體下面找到想 Passthrough 的裝置，開啟它的 Passthrough 功能。
+
+![](https://i.imgur.com/ldhikYA.png)
+
+因為 Passthrough 後會無法從 ESXi 操控，所以我們也要 Passthrough USB 裝置用來連接滑鼠鍵盤，才能直接操控 macOS。因為無法 Passthrough 單一 USB 裝置給 Guest OS，我們必須 Passthrough 一整個 USB Controller。
+
+![](https://i.imgur.com/yVn7ipn.png)
+
+接著在 macOS VM 設定裡，將記憶體的 "Reserve all guest memory" 打勾，
+
+![](https://i.imgur.com/jYyG7nC.png)
+
+接著在「新增其他裝置」(Add other device)，選擇新增 PCI 裝置，並選擇顯卡與 USB Conroller。
+
+![](https://i.imgur.com/ZUXCfOF.png)
+
+儲存後就可以開機了，開機後便無法從 ESXi 操控了，如果開機後發現螢幕只顯示桌布，可以直接試著輸入密碼按 Enter，猜測這是因為 macOS 誤以為有多螢幕所造成的，登入後一切會恢復正常。或是也可以從 macOS 裡面的顯示設定去設定。
+
+恭喜你，終於擁有一台性能好的桌上型 Mac，媲美 MAC Pro 而硬體想怎樣搞都可以。對於 macOS 大家應該都如此，又愛又恨，甚至踩雷無數，~~但只要不由愛轉恨都好~~。最後附上一張 `Unlocker` 沒裝好導致開機 Kernel Panic 出現的 `Dont_Steal_MacOS.cpp` 截圖，我 Troubleshooting 時從未看過給得這麼爽快的線索XD。
+
+![](https://i.imgur.com/CopSHyf.png)
+
+欲知詳情，以及為何安裝 `Unlocker` 可以成功，請在 macOS 中開啟 Terminal，看看這個檔案：
+```bash
+cat '/System/Library/Extensions/Dont Steal MacOS X.kext/Contents/MacOS/Dont Steal Mac OS X'
+```
+裡面有一段文字這麼寫道：
+```
+Copyright (c) 2006-2019 Apple Inc. All rights reserved.
+
+The purpose of this Apple software is to protect Apple copyrighted materials from 
+unauthorized copying and use. You may not copy, modify, reverse engineer, publicly 
+display, publicly perform, sublicense, transfer or redistribute this file, in whole or 
+in part.  If you have obtained a copy of this Apple software and do not have a valid 
+license from Apple to use it, please immediately destroy or delete it from your 
+computer.
+
+ Dont_Steal_Mac_OS_X AppleSMC "DSMOS: SMC read error K0: %d"@/BuildRoot/Library/Caches/
+ com.apple.xbs/Sources/DontStealMacOS/DontStealMacOS-30.0.1/Dont_Steal_MacOS.cpp:191 
+ "DSMOS: SMC read error K1: %d"@/BuildRoot/Library/Caches/com.apple.xbs/Sources/
+ DontStealMacOS/DontStealMacOS-30.0.1/Dont_Steal_MacOS.cpp:198 %02x DSMOS: SMC returned 
+ incorrect key: %s
+```
+什麼意思呢，嘿嘿，就自行解讀囉。
+
 ## References
 - [How to patch your VMware ESXi 6.7 server - StevenAnnett.co.uk](https://www.stevenannett.co.uk/2019/04/11/how-to-patch-your-vmware-esxi-6-7-server/)
 - [頭城國小資訊組 | VMware ESXi - 安裝 macOS Sierra 10.12.4](http://blog.ilc.edu.tw/blog/blog/25793/post/105209/690915)
