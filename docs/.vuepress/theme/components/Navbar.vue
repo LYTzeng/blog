@@ -101,8 +101,8 @@ $navbar-horizontal-padding = 1.5rem
     vertical-align top
   .site-name
     font-size 1.1rem
-    font-family 'Noto Sans TC Regular'
-    font-weight 600
+    font-family 'Quicksand'
+    font-weight 400
     color $textColor
     position relative
   .links

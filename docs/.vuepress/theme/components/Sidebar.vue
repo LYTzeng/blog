@@ -2,7 +2,7 @@
   <aside class="sidebar">
     <div class="bio bio-sidebar">
       <div class="img-holder">
-        <img src="https://avatars3.githubusercontent.com/u/30722178?s=460&v=4"/>
+        <img src="/bio.jpg"/>
       </div>
       <p class="name">Oscar Tseng</p>
       <div style="border-bottom: 1px solid hsl(0, 0%, 30%); border-top: 1px solid hsl(0, 0%, 30%);">
@@ -31,6 +31,9 @@
         </span>
         <span style="width: 32px; height: 32px;">
           <a href="/rss.xml" target="_blank" rel="noopener" title="rss" type="application/rss+xml"><svg fill="#e6e6e6" focusable="false" preserveAspectRatio="xMidYMid meet" style="will-change: transform;" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 18c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm22-4h-2C28 13 19 4 8 4V2c12.1 0 22 9.9 22 22z"></path><path d="M22 24h-2c0-6.6-5.4-12-12-12v-2c7.7 0 14 6.3 14 14z"></path><title>Rss</title></svg></a>
+        </span>
+        <span style="width: 32px; height: 32px;">
+          <a href="https://netlab.csie.ntut.edu.tw" target="_blank" rel="noopener" title="NTUT CSIE Netlab" type="application/rss+xml"><img src="/Netlab-new-icon-darktheme.svg" style="width: 32px; height: 32px;"/></a>
         </span>
       </div>
     </div>
