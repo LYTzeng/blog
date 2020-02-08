@@ -107,7 +107,7 @@ class L2SW(app_manager.RyuApp):
         super(L2SW, self).__init__(*args, **kwargs)
 ```
 接下來觀察 `simple_switch` 原始碼，藉此了解如何開發 Ryu Controller。
-Code：https://github.com/osrg/ryu/blob/master/ryu/app/simple_switch_15.py
+Code [在官方 Repo 中](https://github.com/osrg/ryu/blob/master/ryu/app/simple_switch_15.py)
 
 ### 指定 OpenFlow 版本
 這個例子指定了 OpenFlow 1.5 版本

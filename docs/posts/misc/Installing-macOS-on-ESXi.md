@@ -22,7 +22,7 @@ category: Misc
 
 首先請更新 ESXi Server 到 Update 3，才能支援 MacOS 10.15。我們必須依序從 Update 1 更新到 Update 3。以下過程需要進行三遍，分別安裝三次 Update 的更新。
 
-1. 到 https://my.vmware.com/group/vmware/patch#search 找到對應版本，下載 zip 檔。Update 1 的檔名為 `update-from-esxi6.7-6.7_update01.zip`。
+1. 到[這裡](https://my.vmware.com/group/vmware/patch#search) 找到對應版本，下載 zip 檔。Update 1 的檔名為 `update-from-esxi6.7-6.7_update01.zip`。
 
 2. 讓 Server 進入維護模式。
 ![](https://i.imgur.com/R2FS7Cj.png)
