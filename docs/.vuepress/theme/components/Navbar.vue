@@ -118,6 +118,9 @@ $navbar-horizontal-padding = 1.5rem
     .search-box
       flex: 0 0 auto
       vertical-align top
+      input
+        background  #595959 url(/assets/img/search.83621669.svg) 0.6rem 0.6rem no-repeat
+        border 0
 
 .dropdown-wrapper .nav-dropdown
   background-color $navbarDropdownColor
@@ -128,6 +131,8 @@ $navbar-horizontal-padding = 1.5rem
   background-color $navbarDropdownColor
   border none
   box-shadow 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  .suggestion.focused
+    background-color #595959
   
 @media (max-width: $MQMobile)
   .navbar
@@ -142,5 +147,5 @@ $navbar-horizontal-padding = 1.5rem
       white-space nowrap
       text-overflow ellipsis
       font-size 1.1 rem
-      font-family 'Noto Sans TC Regular'
+      font-family 'Quicksand'
 </style>

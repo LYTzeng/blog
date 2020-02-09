@@ -1,7 +1,7 @@
 cd /mnt/d/blog/
 git add .
 git commit -m "$1"
-git pull
+git pull -q
 git push
 
 yarn docs:build
@@ -9,5 +9,5 @@ yarn docs:build
 cd /mnt/d/static_blog/lytzeng.github.io
 git add .
 git commit -m "$1"
-git pull
+git pull -q
 git push
