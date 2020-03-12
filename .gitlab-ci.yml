@@ -1,7 +1,11 @@
 image: "node:12.13.1"
 
+stages:
+    - build
+    - deploy
+    - mirror
+
 before_script:
-    - yarn install --silent
     - mkdir -p ~/.ssh
     - echo "$DEPLOY_SERVER_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
@@ -15,6 +19,8 @@ build:
     tags:
         - docker
         - node12.13.1
+    before_script:
+        - yarn install --silent
     script:
         - yarn docs:build
         - ls -la
@@ -24,13 +30,34 @@ build:
 
 deploy:
     stage: deploy
+    image: docker:git
     tags:
         - docker
-        - node12.13.1
+        - git
     script:
         - git clone git@github.com:LYTzeng/lytzeng.github.io.git
         - cp -af docs/.vuepress/dist/. lytzeng.github.io/
         - cd lytzeng.github.io/
+        - git add .
+        - git config user.name "LYTzeng"
+        - git config user.email "oscar217b@gmail.com"
+        - git commit -m "$CI_COMMIT_MESSAGE"
+        - git pull
+        - git push
+
+mirror to github:
+    stage: mirror
+    image: docker:git
+    tags:
+        - docker
+        - git
+    script:
+        - git clone git@github.com:LYTzeng/blog.git
+        - mv blog .blog
+        - cp -rf * .blog
+        - cp -rf .gitlab-ci.yml .blog
+        - cp -rf .gitignore .blog
+        - cd .blog
         - git add .
         - git config user.name "LYTzeng"
         - git config user.email "oscar217b@gmail.com"
