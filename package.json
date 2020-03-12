@@ -8,7 +8,7 @@
     "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-canonical": "^1.0.0",
     "vuepress-plugin-feed": "^0.1.8",
-    "vuepress-plugin-first-created": "/mnt/d/selfmade-vuepress-plugin/vuepress-plugin-first-created",
+    "vuepress-plugin-first-created": "git+https://github.com/LYTzeng/vuepress-plugin-first-created.git",
     "vuepress-plugin-img-lazy": "^1.0.1",
     "vuepress-plugin-robots": "^1.0.1",
     "vuepress-plugin-sitemap": "^2.3.1",

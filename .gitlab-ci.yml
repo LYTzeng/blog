@@ -1,0 +1,39 @@
+image: "node:12.13.1"
+
+before_script:
+    - yarn install --silent
+    - mkdir -p ~/.ssh
+    - echo "$DEPLOY_SERVER_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - eval "$(ssh-agent -s)"
+    - cat ~/.ssh/id_rsa
+    - ssh-add ~/.ssh/id_rsa
+    - ssh-keyscan -H 'github.com' >> ~/.ssh/known_hosts
+
+build:
+    stage: build
+    tags:
+        - docker
+        - node12.13.1
+    script:
+        - yarn docs:build
+        - ls -la
+    artifacts:
+        paths:
+            - docs/.vuepress/dist/
+
+deploy:
+    stage: deploy
+    tags:
+        - docker
+        - node12.13.1
+    script:
+        - git clone git@github.com:LYTzeng/lytzeng.github.io.git
+        - cp -af docs/.vuepress/dist/. lytzeng.github.io/
+        - cd lytzeng.github.io/
+        - git add .
+        - git config user.name "LYTzeng"
+        - git config user.email "oscar217b@gmail.com"
+        - git commit -m "$CI_COMMIT_MESSAGE"
+        - git pull
+        - git push
