@@ -5,6 +5,15 @@ stages:
     - deploy
     - mirror
 
+.github_template: &github_template |
+    cd $REPO_DIR
+    git add .
+    git config user.name $GIT_USER_NAME       # the variable configured in Gitlab
+    git config user.email "$GIT_USER_EMAIL"   # the variable configured in Gitlab
+    git commit -m "$CI_COMMIT_MESSAGE"        # the variable configured in Gitlab
+    git pull
+    git push
+
 before_script:
     - mkdir -p ~/.ssh
     - echo "$DEPLOY_SERVER_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
@@ -23,7 +32,6 @@ build:
         - yarn install --silent
     script:
         - yarn docs:build
-        - ls -la
     artifacts:
         paths:
             - docs/.vuepress/dist/
@@ -34,16 +42,14 @@ deploy:
     tags:
         - docker
         - git
+    only:
+        - master
+    variables:
+        REPO_DIR: "lytzeng.github.io"
     script:
         - git clone git@github.com:LYTzeng/lytzeng.github.io.git
-        - cp -af docs/.vuepress/dist/. lytzeng.github.io/
-        - cd lytzeng.github.io/
-        - git add .
-        - git config user.name "LYTzeng"
-        - git config user.email "oscar217b@gmail.com"
-        - git commit -m "$CI_COMMIT_MESSAGE"
-        - git pull
-        - git push
+        - cp -af docs/.vuepress/dist/ $REPO_DIR
+        - *github_template
 
 mirror to github:
     stage: mirror
@@ -51,16 +57,12 @@ mirror to github:
     tags:
         - docker
         - git
+    variables:
+        REPO_DIR: ".blog"
     script:
         - git clone git@github.com:LYTzeng/blog.git
-        - mv blog .blog
-        - cp -rf * .blog
-        - cp -rf .gitlab-ci.yml .blog
-        - cp -rf .gitignore .blog
-        - cd .blog
-        - git add .
-        - git config user.name "LYTzeng"
-        - git config user.email "oscar217b@gmail.com"
-        - git commit -m "$CI_COMMIT_MESSAGE"
-        - git pull
-        - git push
+        - mv blog $REPO_DIR
+        - cp -rf * $REPO_DIR
+        - cp -rf .gitlab-ci.yml $REPO_DIR
+        - cp -rf .gitignore $REPO_DIR
+        - *github_template
