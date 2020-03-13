@@ -48,7 +48,8 @@ deploy:
         REPO_DIR: "lytzeng.github.io"
     script:
         - git clone git@github.com:LYTzeng/lytzeng.github.io.git
-        - cp -af docs/.vuepress/dist/ $REPO_DIR
+        - rm -rf $($REPO_DIR/*)
+        - cp -rf docs/.vuepress/dist/* $REPO_DIR
         - *github_template
 
 mirror to github:
