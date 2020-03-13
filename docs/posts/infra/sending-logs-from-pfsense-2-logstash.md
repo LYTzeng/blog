@@ -1,6 +1,6 @@
 ---
 lang: zh-Hant-TW
-description: Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log，如 Syslog、Netflow等，並且透過 Parser 將非結構化資料轉換成半結構化資料。Parser 方便的是使用 Grok Pattern，可以避免自行撰寫複雜的 Regex，不過他也支援 Regex 讓我們可以自訂 Pattern，因此 logstash 的 parsing 是很彈性的。
+description: Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log，如 Syslog、Netflow等，並且透過 Parser 將非結構化資料轉換成半結構化資料。Parser 方便的是使用 Grok Pattern，可以避免自行撰寫複雜的 Regex，不過他也支援 Regex 讓我們可以自訂 Pattern，因此 logstash 的 parsing 是很彈性的。本系列文章介紹 Pfsense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
 sidebar: auto
 tags: ["ELK", "pfSense"]
 category: Infra
