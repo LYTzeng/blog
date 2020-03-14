@@ -6,7 +6,7 @@ tags: ["ELK", "pfSense"]
 category: Infra
 title: ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash
 ---
-![](/images/infra/sending-logs-from-pfSense-2-logstash.png)
+![](/images/infra/sending-logs-from-pfsense-2-logstash.png)
 
 # ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash
 <PageEdit/>
