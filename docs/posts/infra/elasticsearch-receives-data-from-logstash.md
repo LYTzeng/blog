@@ -1,10 +1,10 @@
 ---
 lang: zh-Hant-TW
-description: 本系列文章介紹 pfSense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
+description: 本系列文章介紹 pfSense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。Elasticsearch 是個全文搜尋引擎，透過 Inverted Index 的資料結構來提供即時的搜尋和分析功能。整個 ELK Stack 讀取和分析的 Log 就是儲存在 Elasticsearch，因此 Elasticsearch 需要足夠的儲存空間，而且它專門接收 JSON 型態的資料，所以除了和 Logstash 整合，只要能輸出 JSON 格式的工具都能與 Elasticsearch 整合。
 sidebar: auto
 tags: ["ELK", "pfSense"]
 category: Infra
-title: ELK Stack 整合 pfSense (二)：Elasticsearch 
+title: ELK Stack 整合 pfSense (二)：Elasticsearch
 ---
 ![](/images/infra/elasticsearch-receives-data-from-logstash.png)
 
@@ -17,7 +17,7 @@ title: ELK Stack 整合 pfSense (二)：Elasticsearch
 ## ELK Stack 整合 pfSense 系列文
 - [ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash](/posts/infra/sending-logs-from-pfsense-2-logstash.html)
 - [本篇] ELK Stack 整合 pfSense (二)：Elasticsearch
-- [待續] [ELK Stack 整合 pfSense (三)：Kibana Dashboard](#)
+- [ELK Stack 整合 pfSense (三)：Kibana Dashboard](/posts/infra/monitoring-pfsense-via-kibana.html)
 
 ## 安裝 Elasticsearch
 依照[文件](https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-repo)步驟安裝，一樣要先裝 Java，再裝 Elasticsearch。

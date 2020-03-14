@@ -17,7 +17,7 @@ Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log
 ## ELK Stack 整合 pfSense 系列文
 - [本篇] ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash
 - [ELK Stack 整合 pfSense (二)：Elasticsearch](/posts/infra/elasticsearch-receives-data-from-logstash)
-- [待續] [ELK Stack 整合 pfSense (三)：Kibana Dashboard](#)
+- [ELK Stack 整合 pfSense (三)：Kibana Dashboard](/posts/infra/monitoring-pfsense-via-kibana.html)
 
 ## 安裝 Logstash
 裝 logstash 前需要先安裝 Java，注意一下 Logstash 和 Java 的相容性。
