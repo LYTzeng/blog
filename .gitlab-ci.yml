@@ -55,5 +55,5 @@ deploy:
     script:
         - git clone git@github.com:LYTzeng/lytzeng.github.io.git
         - rm -rf $($REPO_DIR/*)
-        - cp -rf docs/.vuepress/dist/* $REPO_DIR
+        - cp -rf .blog/docs/.vuepress/dist/* $REPO_DIR
         - *github_template
