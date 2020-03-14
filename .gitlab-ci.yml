@@ -3,7 +3,6 @@ image: "node:12.13.1"
 stages:
     - build
     - deploy
-    - mirror
 
 .github_template: &github_template |
     cd $REPO_DIR
@@ -28,13 +27,21 @@ build:
     tags:
         - docker
         - node12.13.1
-    before_script:
-        - yarn install --silent
+    variables:
+        REPO_DIR: ".blog"
     script:
+        - git clone git@github.com:LYTzeng/blog.git
+        - mv blog $REPO_DIR
+        - cp -rf * $REPO_DIR
+        - cp -rf .gitlab-ci.yml $REPO_DIR
+        - cp -rf .gitignore $REPO_DIR
+        - *github_template
+        - yarn install --silent
+        - cd $REPO_DIR
         - yarn docs:build
     artifacts:
         paths:
-            - docs/.vuepress/dist/
+            - $REPO_DIR/docs/.vuepress/dist/
 
 deploy:
     stage: deploy
@@ -50,20 +57,4 @@ deploy:
         - git clone git@github.com:LYTzeng/lytzeng.github.io.git
         - rm -rf $($REPO_DIR/*)
         - cp -rf docs/.vuepress/dist/* $REPO_DIR
-        - *github_template
-
-mirror to github:
-    stage: mirror
-    image: docker:git
-    tags:
-        - docker
-        - git
-    variables:
-        REPO_DIR: ".blog"
-    script:
-        - git clone git@github.com:LYTzeng/blog.git
-        - mv blog $REPO_DIR
-        - cp -rf * $REPO_DIR
-        - cp -rf .gitlab-ci.yml $REPO_DIR
-        - cp -rf .gitignore $REPO_DIR
         - *github_template
