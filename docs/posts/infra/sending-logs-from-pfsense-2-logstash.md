@@ -1,18 +1,23 @@
 ---
 lang: zh-Hant-TW
-description: Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log，如 Syslog、Netflow等，並且透過 Parser 將非結構化資料轉換成半結構化資料。Parser 方便的是使用 Grok Pattern，可以避免自行撰寫複雜的 Regex，不過他也支援 Regex 讓我們可以自訂 Pattern，因此 logstash 的 parsing 是很彈性的。本系列文章介紹 Pfsense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
+description: Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log，如 Syslog、Netflow等，並且透過 Parser 將非結構化資料轉換成半結構化資料。Parser 方便的是使用 Grok Pattern，可以避免自行撰寫複雜的 Regex，不過他也支援 Regex 讓我們可以自訂 Pattern，因此 logstash 的 parsing 是很彈性的。本系列文章介紹 pfSense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
 sidebar: auto
 tags: ["ELK", "pfSense"]
 category: Infra
-title: ELK Stack 整合 Pfsense (一)：將 Pfsense 防火牆阻擋紀錄傳送到 Logstash
+title: ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash
 ---
-![](/images/infra/sending-logs-from-pfsense-2-logstash.png)
+![](/images/infra/sending-logs-from-pfSense-2-logstash.png)
 
-# ELK Stack 整合 Pfsense (一)：將 Pfsense 防火牆阻擋紀錄傳送到 Logstash
+# ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash
 <PageEdit/>
 <div><TagLinks/></div>
 
-Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log，如 Syslog、Netflow等，並且透過 **Parser** 將[非結構化資料](https://en.wikipedia.org/wiki/Unstructured_data)轉換成[半結構化資料](https://en.wikipedia.org/wiki/Semi-structured_data)。Parser 方便的是使用 Grok Pattern，可以避免自行撰寫複雜的 Regex，不過他也支援 Regex 讓我們可以自訂 Pattern，因此 Logstash 的 parsing 是很彈性的。本系列文章介紹 Pfsense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
+Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log，如 Syslog、Netflow等，並且透過 **Parser** 將[非結構化資料](https://en.wikipedia.org/wiki/Unstructured_data)轉換成[半結構化資料](https://en.wikipedia.org/wiki/Semi-structured_data)。Parser 方便的是使用 Grok Pattern，可以避免自行撰寫複雜的 Regex，不過他也支援 Regex 讓我們可以自訂 Pattern，因此 Logstash 的 parsing 是很彈性的。本系列文章介紹 pfSense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
+
+## ELK Stack 整合 pfSense 系列文
+- [本篇] ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash
+- [ELK Stack 整合 pfSense (二)：Elasticsearch](/posts/infra/elasticsearch-receives-data-from-logstash)
+- [待續] [ELK Stack 整合 pfSense (三)：Kibana Dashboard](#)
 
 ## 安裝 Logstash
 裝 logstash 前需要先安裝 Java，注意一下 Logstash 和 Java 的相容性。
@@ -47,8 +52,8 @@ Config File 的結構分為 3 個部分，`input`、`filter`、`output`。Logsta
 ### Custom Grok Patterns
 有時我們需要自行定義 Grok Pattern，並且命名之，這可以透過`.grok` file 進行定義，然後再從 config file 中指定 pattern 的路徑。
 
-## 在 Pfsense 設定 Syslog 的 Remote log server
-在 Pfsense 的選單中進入 **Status** > **System Logs**。
+## 在 pfSense 設定 Syslog 的 Remote log server
+在 pfSense 的選單中進入 **Status** > **System Logs**。
 
 ![](https://i.imgur.com/bmoFsdy.png)
 
@@ -62,17 +67,17 @@ Config File 的結構分為 3 個部分，`input`、`filter`、`output`。Logsta
 
 ## 建立 Config file 和 Grok Patttern
 
-我找到 Github 上已經有勇者寫好 pfsense 的 Grok pattern 了，所以直接拿來使用，把整個 [Repo](https://github.com/patrickjennings/logstash-pfsense) 給`clone`下來吧。
+我找到 Github 上已經有勇者寫好 pfSense 的 Grok pattern 了，所以直接拿來使用，把整個 [Repo](https://github.com/patrickjennings/logstash-pfSense) 給`clone`下來吧。
 
 如果要新增更多自己的 Pattern，很多人會使用 [Grok Debugger](https://grokdebug.herokuapp.com/) 進行除錯。
 
 ![](https://i.imgur.com/zLrOWa5.png)
 
-最上面就是輸入原始的 Log；中間的欄位輸入 Grok Pattern；如果有額外定義的 custom pattern (像 `logstash-pfsense/patterns` 裡的內容就是 custom pattern)，請將 **Add custom patterns** 打勾就會可以輸入了。最下方就是預覽 Parsed 後的結果。
+最上面就是輸入原始的 Log；中間的欄位輸入 Grok Pattern；如果有額外定義的 custom pattern (像 `logstash-pfSense/patterns` 裡的內容就是 custom pattern)，請將 **Add custom patterns** 打勾就會可以輸入了。最下方就是預覽 Parsed 後的結果。
 
-`logstash-pfsense/conf.d` 裡的檔案複製到`/etc/logstash/conf.d`，`logstash-pfsense/patterns`複製到 `etc/logstash/patterns`。記得修改`01-inputs.conf`的 port 和`10-syslog.conf`的 IP，須對應到 pfsense 的 syslog 設定。還有`30-outputs.conf`的 Elasticsearch host IP。
+`logstash-pfSense/conf.d` 裡的檔案複製到`/etc/logstash/conf.d`，`logstash-pfSense/patterns`複製到 `etc/logstash/patterns`。記得修改`01-inputs.conf`的 port 和`10-syslog.conf`的 IP，須對應到 pfSense 的 syslog 設定。還有`30-outputs.conf`的 Elasticsearch host IP。
 
-##### `01-inputs.conf`
+#### `01-inputs.conf`
 例子使用 Port `6514`
 ```conf
 #tcp syslog stream via 5140
@@ -91,14 +96,14 @@ input {
 }
 ```
 
-##### `10-syslog.conf` 前半段
+#### `10-syslog.conf` 前半段
 ```conf
 filter {
   if [type] == "syslog" {
     #change to pfSense ip address
     if [host] =~ /172\.30\.0\.1/ { # 這邊要修改
       mutate {
-        add_tag => ["PFSense", "Ready"]
+        add_tag => ["pfSense", "Ready"]
       }
     }
     if "Ready" not in [tags] {
@@ -112,13 +117,13 @@ filter {
 
 **架 ELK 需要特別注意服務之間溝通的 Port**，預設 **Elasticsearch** 會使用 <mark>Port `9200`</mark> 來接收 Logstash 的資料，因此`30-outputs.conf`的設定請參考下面：
 
-##### `30-outputs.conf`
+#### `30-outputs.conf`
 ```conf
 output {
   if [type] == "syslog" {
     elasticsearch {
         hosts => "172.30.0.5:9200"
-        index => "logstash-pfsense-%{+YYYY.MM.dd}"
+        index => "logstash-pfSense-%{+YYYY.MM.dd}"
     }
     stdout { codec => rubydebug }
   }
@@ -139,7 +144,7 @@ sudo service logstash start
 
 ## References
 - [Structure of a Config File | Logstash Reference [7.6] | Elastic](https://www.elastic.co/guide/en/logstash/7.6/configuration-file-structure.html)
-- [System Monitoring — Remote Logging with Syslog | pfSense Documentation](https://docs.netgate.com/pfsense/en/latest/book/monitoring/remote-logging.html)
-- [patrickjennings/logstash-pfsense: Logstash configuration for pfSense syslog events.](https://github.com/patrickjennings/logstash-pfsense)
+- [System Monitoring — Remote Logging with Syslog | pfSense Documentation](https://docs.netgate.com/pfSense/en/latest/book/monitoring/remote-logging.html)
+- [patrickjennings/logstash-pfSense: Logstash configuration for pfSense syslog events.](https://github.com/patrickjennings/logstash-pfSense)
 
 <Disqus/>
