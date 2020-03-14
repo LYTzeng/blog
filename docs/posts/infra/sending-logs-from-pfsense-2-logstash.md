@@ -4,6 +4,7 @@ description: Logstash 的功能像是一個接收器，支援從許多種 Protoc
 sidebar: auto
 tags: ["ELK", "pfSense"]
 category: Infra
+title: ELK Stack 整合 Pfsense (一)：將 Pfsense 防火牆阻擋紀錄傳送到 Logstash
 ---
 ![](/images/infra/sending-logs-from-pfsense-2-logstash.png)
 
