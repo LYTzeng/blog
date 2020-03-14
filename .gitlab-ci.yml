@@ -37,7 +37,6 @@ build:
         - cp -rf .gitignore $REPO_DIR
         - *github_template
         - yarn install --silent
-        - cd $REPO_DIR
         - yarn docs:build
     artifacts:
         paths:
