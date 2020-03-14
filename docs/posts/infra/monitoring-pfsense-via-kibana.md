@@ -1,6 +1,6 @@
 ---
 lang: zh-Hant-TW
-description: 本系列文章介紹 pfSense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
+description: Kibana 能夠將資料視覺化成各種圖表並進行分析，同時提供 ELK Stack 的管理介面，架設完成的 ELK Stack 之後只需進入 Kibana，就可以透過這個 portal 瀏覽一切 Elastic 的服務。之前我將 pfSense 的 pfBlockerNG 防火牆阻擋紀錄透過 syslog 送給 Logstash，並且使用 Elasticsearch 接收已結構化的資料來提供全文搜尋服務，最後一步就是架設 Kibana 進行視覺化。
 sidebar: auto
 tags: ["ELK", "pfSense"]
 category: Infra
