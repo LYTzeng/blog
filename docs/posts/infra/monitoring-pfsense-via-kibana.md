@@ -14,6 +14,10 @@ title: ELK Stack 整合 pfSense (三)：Kibana Dashboard
 
 Kibana 能夠將資料視覺化成各種圖表並進行分析，同時提供 ELK Stack 的管理介面，架設完成的 ELK Stack 之後只需進入 Kibana，就可以透過這個 portal 瀏覽一切 Elastic 的服務。之前我將 pfSense 的 pfBlockerNG 防火牆阻擋紀錄透過 syslog 送給 Logstash，並且使用 Elasticsearch 接收已結構化的資料來提供全文搜尋服務，最後一步就是架設 Kibana 進行視覺化。
 
+整個 pfSense 與 ELK Stack 的架構如下面這張圖，架設過程中只要注意一下 Port 的對應其他都沒有太大的問題。
+
+![](https://i.imgur.com/yMAxVaB.png)
+
 ## ELK Stack 整合 pfSense 系列文
 - [ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash](/posts/infra/sending-logs-from-pfsense-2-logstash.html)
 - [ELK Stack 整合 pfSense (二)：Elasticsearch](/posts/infra/elasticsearch-receives-data-from-logstash)

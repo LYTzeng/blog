@@ -14,6 +14,10 @@ title: ELK Stack 整合 pfSense (二)：Elasticsearch
 
 本系列文章介紹 pfSense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。Elasticsearch 是個[全文搜尋引擎](https://zh.wikipedia.org/wiki/全文檢索)，透過 [Inverted Index](https://en.wikipedia.org/wiki/Inverted_index) 的資料結構來提供即時的搜尋和分析功能。整個 ELK Stack 讀取和分析的 Log 就是儲存在 Elasticsearch，因此 Elasticsearch 需要足夠的儲存空間，而且它專門接收 JSON 型態的資料，所以除了和 Logstash 整合，只要能輸出 JSON 格式的工具都能與 Elasticsearch 整合。在查詢時皆透過 REST API，文件中有提到可使用 [Query String](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-uri-request.html) 或是 Query DSL [在 GET 的 request body 塞 JSON 查詢指令](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html)，雖然目前沒有定義 GET method 的 body 的用途，關於是否可以這樣使用也存在不少爭議，不過看起來 Elastic 他們就自行使用了。
 
+整個 pfSense 與 ELK Stack 的架構如下面這張圖，架設過程中只要注意一下 Port 的對應其他都沒有太大的問題。
+
+![](https://i.imgur.com/yMAxVaB.png)
+
 ## ELK Stack 整合 pfSense 系列文
 - [ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash](/posts/infra/sending-logs-from-pfsense-2-logstash.html)
 - [本篇] ELK Stack 整合 pfSense (二)：Elasticsearch

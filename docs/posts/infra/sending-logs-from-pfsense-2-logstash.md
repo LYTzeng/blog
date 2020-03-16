@@ -14,6 +14,10 @@ title: ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送�
 
 Logstash 的功能像是一個接收器，支援從許多種 Protocol 接收 Log，如 Syslog、Netflow等，並且透過 **Parser** 將[非結構化資料](https://en.wikipedia.org/wiki/Unstructured_data)轉換成[半結構化資料](https://en.wikipedia.org/wiki/Semi-structured_data)。Parser 方便的是使用 Grok Pattern，可以避免自行撰寫複雜的 Regex，不過他也支援 Regex 讓我們可以自訂 Pattern，因此 Logstash 的 parsing 是很彈性的。本系列文章介紹 pfSense 與 ELK Stack (7.6 版) 的整合，藉此分析與收集阻擋的連接紀錄。
 
+整個 pfSense 與 ELK Stack 的架構如下面這張圖，架設過程中只要注意一下 Port 的對應其他都沒有太大的問題。
+
+![](https://i.imgur.com/yMAxVaB.png)
+
 ## ELK Stack 整合 pfSense 系列文
 - [本篇] ELK Stack 整合 pfSense (一)：將 pfSense 防火牆阻擋紀錄傳送到 Logstash
 - [ELK Stack 整合 pfSense (二)：Elasticsearch](/posts/infra/elasticsearch-receives-data-from-logstash)
