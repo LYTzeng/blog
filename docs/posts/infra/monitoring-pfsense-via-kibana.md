@@ -28,6 +28,16 @@ echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee 
 sudo apt-get update && sudo apt-get install kibana
 ```
 
+接著要對 Kibana 進行設定
+```bash
+sudo vim /etc/kibana/kibana.yml
+```
+在 `kibana.yml` 找到 `server.host` 並且改成主機的 IP，如果沒有改這部分，Kibana 不會接收外部的連接。找到 `elasticsearch.hosts` 並把參數改為 Elasticsearch 的 IP，Port 請對應到 9200。如果你把 ELK 架在同一台主機上，則不需要進行這段設定。
+```
+server.host: "172.30.0.6"
+elasticsearch.hosts: ["http://172.30.0.5:9200"]
+```
+
 接著啟動 Kibana
 ```bash
 sudo systemctl start kibana.service
