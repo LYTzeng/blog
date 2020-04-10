@@ -4,6 +4,7 @@ import GetPagesByTag from './theme/components/GetPagesByTag.vue'
 import Categories from './theme/components/Categories.vue'
 import Disqus from './theme/components/Disqus.vue'
 import TagCloud from './theme/components/TagCloud.vue'
+import Badges from './theme/components/Badges.vue'
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
@@ -26,4 +27,5 @@ export default ({
   Vue.component('Categories', Categories)
   Vue.component('Disqus', Disqus)
   Vue.component('TagCloud', TagCloud)
+  Vue.component('Badges', Badges)
 }
