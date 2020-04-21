@@ -9,6 +9,7 @@ title: 透過 AWS Lambda、API Gateway 和 AWS Go SDK，從 Mattermost 查看/�
 # 透過 AWS Lambda、API Gateway 和 AWS Go SDK，從 Mattermost 查看/開關 EC2 Instances
 <PageEdit/>
 <div><TagLinks/></div>
+
 目前我實習的公司使用 Mattermost 作為內部通訊軟體，且 Mattermost 支援 Webhook 和 Slash Command。為了方便隨時隨地可以快速開啟/關閉 EC2，因此想寫一個下 Slash Command 指令的工具，直接呼叫 API 來控制和查看 EC2，免去登入 console 的麻煩，一定會方便許多。整體架構如下。
 
 ![](/images/aws/lambda-apigateway-mattermost-go-ec2-1.jpg)
